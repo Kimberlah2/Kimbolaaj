@@ -1,84 +1,59 @@
-/* Center the form on the page */
 body {
-  background-color: #e8e8e8;
+  margin: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  justify-content: center;
+  background-color: #F0EDE8;
+  font-family: Arial, sans-serif;
 }
 
-/* Bordered form */
-form {
-  border: none;
-  width: 380px;
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+h1 {
+  font-size: 22px;
+  color: #3A3632;
+  text-align: center;
+  margin: 0 0 2rem;
 }
 
-/* Full-width inputs */
+label {
+  display: block;
+  font-size: 12px;
+  color: #8C877F;
+  margin-bottom: 6px;
+}
+
 input[type=text], input[type=password] {
   width: 100%;
-  padding: 12px 16px;
-  margin: 6px 0;
-  display: inline-block;
-  border: 1px solid #ddd;
+  padding: 10px 14px;
+  margin: 0 0 1rem;
+  border: 1px solid #DDD9D3;
   border-radius: 8px;
+  background-color: #F4F1ED;
   box-sizing: border-box;
   font-size: 14px;
-  color: #333;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-  outline: none;
-  border-color: #04AA6D;
-}
-
-/* Set a style for all buttons */
 button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 13px 20px;
-  margin: 12px 0 0 0;
-  border: none;
-  cursor: pointer;
   width: 100%;
-  font-size: 15px;
-  font-weight: 600;
+  padding: 11px;
+  margin-top: 0.5rem;
+  background-color: #04AA6D;
+  color: #FAFAF8;
+  border: none;
   border-radius: 8px;
-  letter-spacing: 0.5px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-/* Add a hover effect for buttons */
 button:hover {
   background-color: #038a58;
 }
 
-/* Add padding to containers */
 .container {
-  padding: 32px 28px;
-}
-
-/* Name styling */
-h1 {
-  font-size: 22px;
-  font-weight: 700;
-  color: #222;
-  margin: 0 0 24px 0;
-  white-space: nowrap;
-}
-
-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: #555;
-}
-
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
+  background: #FAFAF8;
+  border: 1px solid #DDD9D3;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  width: 300px;
 }

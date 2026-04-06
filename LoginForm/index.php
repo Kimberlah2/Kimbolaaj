@@ -1,3 +1,23 @@
+<?php
+session_start();
+require 'db.php';
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  $username = $_POST['username'];
+  $password = md5($_POST['password']);
+
+  $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ? AND PASSWORD = ?");
+  $stmt->execute([$username, $password]);
+
+  if($stmt->rowCount() > 0) {
+    $_SESSION['user'] = $username;
+    header("Location: dashboard.php");
+    exit();
+  }else{
+    $error = "Invalid Username or Password";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,18 +27,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form action="dashboard.php">
   <div class="container">
     <h1>Kimberly Reyn B. Novero</h1>
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit">Login</button>
-  </div>
+   <form method = "POST">
+      <label>Username:</label><br>
+      <input type="text" name="username"><br>
+      <label>Password:</label><br>
+      <input type="password" name="password"><br>
+      <button type="">Login</button>
   </form>
+</div>
 
 </body>
 </html>
